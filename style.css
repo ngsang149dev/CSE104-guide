@@ -1,0 +1,265 @@
+/* --- 1. CẤU HÌNH MÀU SẮC (Trắng - Đỏ Professional) --- */
+:root {
+    /* Gradient Đỏ Cherry hiện đại */
+    --primary-gradient: linear-gradient(135deg, #D31027 0%, #EA384D 100%);
+    
+    /* Màu điểm nhấn */
+    --accent-color: #D31027; /* Đỏ đậm */
+    
+    /* Bảng màu SÁNG (Light Mode) */
+    --bg-body: #f4f6f8;       /* Xám cực nhạt (gần như trắng) */
+    --bg-card: #ffffff;       /* Trắng tinh cho các khối */
+    --bg-hover: #fff0f1;      /* Hồng phấn cực nhạt khi hover */
+    
+    --text-main: #333333;     /* Đen xám dễ đọc */
+    --text-sub: #666666;      /* Xám vừa */
+    --border-color: #e0e0e0;  /* Viền xám nhạt */
+    
+    /* Hiệu ứng bóng đổ nhẹ nhàng */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 24px rgba(211, 16, 39, 0.15); /* Bóng đỏ nhẹ */
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- 2. HEADER (SẠCH & NỔI BẬT) --- */
+.header {
+    background: var(--primary-gradient);
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Họa tiết trang trí nhẹ */
+.header::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -10%; width: 120%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    transform: rotate(-5deg);
+    pointer-events: none;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideDown 0.6s ease-out;
+}
+
+.header p {
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* --- 3. SEARCH BAR (TRẮNG TINH TẾ) --- */
+.search-container {
+    max-width: 700px;
+    margin: -35px auto 50px auto;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 25px;
+    font-size: 16px;
+    background: white;
+    color: var(--text-main);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Bóng đổ mềm */
+}
+
+.search-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 25px rgba(211, 16, 39, 0.2); /* Phát sáng đỏ nhẹ */
+    transform: translateY(-2px);
+}
+
+/* --- 4. CONTAINER & GROUPS --- */
+.group-container {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+.group-container:nth-child(1) { animation-delay: 0.1s; }
+.group-container:nth-child(2) { animation-delay: 0.2s; }
+.group-container:nth-child(3) { animation-delay: 0.3s; }
+.group-container:nth-child(4) { animation-delay: 0.4s; }
+
+.group-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, rgba(211, 16, 39, 0.05), transparent);
+    padding-top: 5px; padding-bottom: 5px; /* Tạo nền nhẹ cho tiêu đề */
+    border-radius: 0 8px 8px 0;
+}
+
+/* --- 5. TABLE STYLES (CLEAN UI) --- */
+.table-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.table-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(211, 16, 39, 0.3);
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th {
+    background: #f8f9fa;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #eee;
+    color: var(--text-main);
+    transition: background 0.2s;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:hover td {
+    background-color: var(--bg-hover); /* Màu hồng phấn rất nhạt */
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+/* --- 6. BADGES & BUTTONS --- */
+.col-id { width: 50px; text-align: center; color: #888; font-weight: 600; }
+.col-action { width: 100px; text-align: center; }
+
+.btn-view {
+    background: white;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-view:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(211, 16, 39, 0.3);
+}
+
+.badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+/* Badge màu nhẹ nhàng hơn cho nền trắng */
+.badge-math { background: #e3f2fd; color: #1976d2; }
+.badge-algo { background: #e8f5e9; color: #388e3c; }
+
+/* --- 7. MODAL (POPUP) --- */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Làm tối nền ít hơn */
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.2s;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 3vh auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%; max-width: 1300px; height: 90vh;
+    display: flex; flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-header {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 { margin: 0; font-size: 20px; color: var(--accent-color); }
+.close { color: #999; font-size: 28px; cursor: pointer; transition: 0.2s; }
+.close:hover { color: var(--accent-color); }
+
+.modal-body { 
+    padding: 30px; overflow-y: auto; flex: 1; color: #333; line-height: 1.6;
+}
+
+/* --- 8. CONTENT BOXES & CODE --- */
+.section-box { 
+    margin-bottom: 20px; padding: 20px; 
+    background: #fff; 
+    border: 1px solid #eee;
+    border-radius: 6px;
+    border-left: 4px solid #ddd; 
+}
+.sec-green { border-left-color: #28a745; background-color: #f9fff9; }
+.sec-yellow { border-left-color: #ffc107; background-color: #fffdf5; }
+.sec-blue { border-left-color: #17a2b8; background-color: #f5fcff; }
+
+.sec-title { font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; color: #555; font-size: 12px; letter-spacing: 0.5px; }
+
+/* Override PrismJS for Light Theme consistency */
+pre[class*="language-"] {
+    background: #f5f7f9 !important; /* Xám rất nhạt */
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: none;
+    margin-top: 10px;
+}
+code[class*="language-"] { 
+    font-family: 'Consolas', 'Monaco', monospace !important; 
+    font-size: 14px; 
+    text-shadow: none !important;
+    color: #333; /* Đảm bảo chữ đen */
+}
+
+/* --- 9. ANIMATIONS --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
