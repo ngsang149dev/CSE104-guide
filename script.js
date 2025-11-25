@@ -15,7 +15,7 @@ const groups = {
     ],
     "Vay & Trả Góp": [
         "math_house_loan", "math_loan_duration", "math_purchase_rate", 
-        "math_annuity_payment", "math_leasing_battery", "math_loan_repay"
+        "math_annuity_payment", "math_leasing_battery", "math_loan_prepay"
     ]
 };
 
@@ -133,4 +133,5 @@ window.onclick = function(event) {
 }
 
 // Chạy lần đầu
+
 document.addEventListener('DOMContentLoaded', () => renderApp());
