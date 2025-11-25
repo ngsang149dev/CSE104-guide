@@ -133,5 +133,4 @@ window.onclick = function(event) {
 }
 
 // Chạy lần đầu
-
 document.addEventListener('DOMContentLoaded', () => renderApp());
