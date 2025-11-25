@@ -357,3 +357,81 @@ footer p:first-child {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
 }
+
+/* =========================================
+   MOBILE RESPONSIVE (Giao diện điện thoại)
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* 1. Thu nhỏ Header */
+    .header {
+        padding: 30px 15px; /* Giảm khoảng cách */
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        font-size: 24px; /* Chữ tiêu đề nhỏ lại */
+    }
+    .header p {
+        font-size: 14px;
+    }
+
+    /* 2. Thanh tìm kiếm gọn hơn */
+    .search-container {
+        margin-top: -20px;
+        padding: 0 15px;
+    }
+    .search-input {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    /* 3. Xử lý Bảng (Table) - Quan trọng nhất */
+    /* Cho phép bảng cuộn ngang nếu bị tràn, thay vì bóp méo giao diện */
+    .table-box {
+        overflow-x: auto; /* Tạo thanh cuộn ngang */
+        -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iPhone */
+        margin: 0 15px; /* Cách lề màn hình */
+    }
+    
+    table {
+        min-width: 600px; /* Đảm bảo bảng không bị co quá nhỏ */
+    }
+
+    th, td {
+        padding: 10px; /* Giảm padding ô */
+        font-size: 13px; /* Chữ nhỏ hơn chút */
+    }
+
+    /* 4. Tối ưu Popup (Modal) trên điện thoại */
+    .modal-content {
+        width: 95%;      /* Chiếm gần hết chiều ngang */
+        height: 85vh;    /* Chiếm 85% chiều cao */
+        margin: 10vh auto; /* Căn giữa */
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+    .modal-header h2 {
+        font-size: 16px; /* Tiêu đề popup nhỏ lại */
+    }
+
+    .modal-body {
+        padding: 15px; /* Giảm lề nội dung bên trong */
+    }
+
+    /* 5. Code Block trên mobile */
+    pre[class*="language-"] {
+        font-size: 12px; /* Code nhỏ lại để đỡ phải cuộn nhiều */
+        padding: 10px;
+    }
+    
+    /* 6. Các nút và Badges */
+    .btn-view {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    .col-id { 
+        display: none; /* Mẹo: Ẩn cột ID trên điện thoại cho đỡ chật */ 
+    }
+}

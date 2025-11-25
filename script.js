@@ -8,14 +8,14 @@ const groups = {
     "Ngân hàng & Tiết kiệm": [
         "math_interest_rate", "math_simple_interest", "algo_bank_fee", 
         "algo_bank_fee_2", "math_saving_opt", "math_saving_accumulate", 
-        "math_saving_reverse", "algo_credit_card"
+        "math_saving_reverse", "algo_credit_card", "algo_financial_freedom"
     ],
     "Lương, Thuế & Thu nhập": [
         "algo_tax_calc", "math_gross_salary", "algo_salary_2", "algo_gross_salary_2"
     ],
     "Vay & Trả Góp": [
         "math_house_loan", "math_loan_duration", "math_purchase_rate", 
-        "math_annuity_payment", "math_leasing_battery"
+        "math_annuity_payment", "math_leasing_battery", "math_loan_repay"
     ]
 };
 
